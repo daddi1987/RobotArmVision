@@ -60,3 +60,4 @@ Soft Reset Fw Grbl
 
 
 The module has been successfully tested using Python 3.10 e Fw Grbl 1.1
+
