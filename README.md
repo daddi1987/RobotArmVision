@@ -7,36 +7,46 @@ The images provided in real time will be able to modify the trajectory of the ob
 The Project will consist of a RobotArmMove.py module which consists in giving commands to the Arduino module with the Grbl 1.1 FW installed.
 The coordinates will be sent to the robot that will execute them.
 
-Command
+Command:
+
 The Principal Command Move Robot are GoToPosition e IncrementalPosition.
 
-GoToPosition
+GoToPosition:
+
 The accepted Parameters are absolute Target coordinates on three X Y Z axes and movement speed
 
-IncrementalPosition
+IncrementalPosition:
+
 Accepted parameters are coordinates of incremental movements on three axes X Y Z and movement speed
 
-Setup Command
+Setup Command:
 
-CheckConnectionRobot 
+CheckConnectionRobot:
+
 Control of connection of the Arduino CNC board
 
-CheckParameters
+CheckParameters:
+
 Parameter control
 
-CheckParametersSetup
+CheckParametersSetup:
+
 Check the Setup parameters
 
-ShowHelpMenu
+ShowHelpMenu:
+
 Help command control
 
-Write_Value_Setup
+Write_Value_Setup:
+
 Write a value of the set-up commands
 
-StatusRobot
+StatusRobot:
+
 Know the real-time position of the Robot.
 
-SoftReset
+SoftReset:
+
 Soft Reset Fw Grbl
 
 
