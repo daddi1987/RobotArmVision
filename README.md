@@ -3,6 +3,10 @@
 The Robot Arm Vision library is used to drive a robot composed of a maximum of three axes, which has mounted a camera for image acquisition on its hand.
 The images provided in real time will be able to modify the trajectory of the object and identify its entity.
 
+![Alt text](RobotArmVision/photo/Robot.png?raw=true "Title")
+
+![alt text](https://github.com/[daddi1987]/[RobotArmVision]/photo/[branch]/Robot.png?raw=true)
+
 ## Structure
 The Project will consist of a RobotArmMove.py module which consists in giving commands to the Arduino module with the Grbl 1.1 FW installed.
 The coordinates will be sent to the robot that will execute them.
