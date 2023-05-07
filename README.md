@@ -4,10 +4,9 @@ The images provided in real time will be able to modify the trajectory of the ob
 
 ![Alt text](https://github.com/daddi1987/RobotArmVision/blob/8afa9801c1566354e4d44adbaa3822d63b4585e5/Photo/Robot.png?raw=true "**RobotArm With Gripper**")
 
-![](https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white)
-![](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
-![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
-![](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/da)
+![GitHub all releases](https://img.shields.io/github/downloads/daddi1987/RobotArmVision/total)
+![GitHub issues](https://img.shields.io/github/issues/daddi1987/RobotArmVision)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/daddi1987/RobotArmVision?style=plastic)
 
 **Editor.md** : The open source embeddable online markdown editor (component), based on CodeMirror & jQuery & Marked.
