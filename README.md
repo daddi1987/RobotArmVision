@@ -1,10 +1,16 @@
-# RobotArmVision
-
+# RobotVisionArm
 The Robot Arm Vision library is used to drive a robot composed of a maximum of three axes, which has mounted a camera for image acquisition on its hand.
 The images provided in real time will be able to modify the trajectory of the object and identify its entity.
 
 ![Alt text](https://github.com/daddi1987/RobotArmVision/blob/8afa9801c1566354e4d44adbaa3822d63b4585e5/Photo/Robot.png?raw=true "**RobotArm With Gripper**")
 
+![](https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white)
+![](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
+![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/daddi1987/RobotArmVision?style=plastic)
+
+**Editor.md** : The open source embeddable online markdown editor (component), based on CodeMirror & jQuery & Marked.
 
 ## Structure
 The Project will consist of a RobotArmMove.py module which consists in giving commands to the Arduino module with the Grbl 1.1 FW installed.
@@ -33,3 +39,7 @@ The Principal Command Move Robot are GoToPosition e IncrementalPosition.
 |  **Write_Value_Setup:** |Write a value of the set-up commands   |
 | **StatusRobot:**  |  Know the real-time position of the Robot.|
 | **SoftReset:** | Soft Reset Fw Grbl |
+
+
+	
+	https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg
