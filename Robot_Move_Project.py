@@ -2,14 +2,9 @@ from RobotArmMove import RobotArm
 import time
 from Hand_tools import HeadAndTools
 from Camera_Arm import RobotCamera
-import threading
-import concurrent.futures
+from threading import Thread
 
-# define a coroutine for a task
-def task_OpenCamera():
-    # Open Camera
-    Camera = RobotCamera(0)
-    # block for a moment
+#print("Number of cpu : ", multiprocessing.cpu_count())
 
 
 #Open Camera
@@ -136,11 +131,7 @@ def task_RobotMove():
 
 if __name__ == "__main__":
     # creating thread
-    pool = concurrent.futures.ThreadPoolExecutor(max_workers=2)
-
-    # submit tasks to the pool
-    pool.submit(task_OpenCamera())
-    pool.submit(task_RobotMove())
-
-    pool.shutdown(wait=True)
+    #task_RobotMove()
+    Camera = RobotCamera(0)
+    Camera.ShowCamera()
     print("Done!")
