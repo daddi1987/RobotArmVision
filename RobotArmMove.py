@@ -1,5 +1,5 @@
 __author__      = "Davide Zuanon"
-__copyright__   = "Copyright 2009, Planet Earth"
+__copyright__   = "Copyright 2022, Planet Earth"
 __maintainer__ = "Davide Zuanon"
 __email__ = "davide.zuanon@outlook.it"
 __status__ = "Development"
@@ -18,6 +18,9 @@ __status__ = "Development"
 import serial
 import time
 
+import Linearization
+from Linearization import LinearAxisRobot
+
 ReleaseFw = "Grbl 1.1h ['$' for help]"
 StringEndMessage = b'\nok\r'
 
@@ -30,6 +33,7 @@ class RobotArm():
     # Mapping State Robot
     RobotStop = "Idle"
     RobotRun = "Run"
+
 
     def __init__(self,port,baudrate):
         self.RobotArmSerial = serial.Serial(port=port, baudrate=baudrate, bytesize=8, parity='N', stopbits=1, timeout=None)
@@ -453,3 +457,89 @@ class RobotArm():
                         print("Error: Y not in position")
                 else:
                     print("Error: X not in position")
+
+    def LinearGoToPosition(self, X_Target_Linear, Y_TargetLinear, Z_TargetLinear, Speed):
+        LinearizedRobot = LinearAxisRobot()
+        LinearizedRobot.CalculateGrade(X_Target_Linear,Y_TargetLinear,Z_TargetLinear)
+        print("------GoToPosition-------")
+        X_Target = str(X_Target_Linear)
+        Y_Target = str(Linearization.LinearAxisRobot._lowJoint)
+        Z_Target = str(Linearization.LinearAxisRobot._highJoint)
+        Speed = str(Speed)
+        StringMove = "G90G01X{X_Target}Y{Y_Target}Z{Z_Target}F{Speed}\n".format(X_Target=X_Target, Y_Target=Y_Target, Z_Target=Z_Target, Speed=Speed)
+        self.RobotArmSerial.write(StringMove.encode())
+        RobotArm._readFeadback(self)
+
+        RobotArm.StatusRobot(self)
+        if (RobotArm.StateRobot[0] == "Run"):
+            print("First Tentative")
+            while RobotArm.StateRobot[0] == "Run": #Wait InPosition Robot State
+                self.RobotArmSerial.flushInput()
+                print(RobotArm.StatusRobot(self))
+                print("Robot Move")
+                time.sleep(0.025)
+            if (RobotArm.StateRobot[0] == "Idle"):
+                X_Target = float(X_Target)
+                X_Target = round(X_Target,1)
+                ValueXAproximated = RobotArm.StateRobot[1]
+                ValueXAproximated = round(ValueXAproximated,1)
+                if ValueXAproximated == X_Target:
+                    #print("X in Position")
+                    Y_Target = float(Y_Target)
+                    Y_Target = round(Y_Target, 1)
+                    ValueYAproximated = RobotArm.StateRobot[2]
+                    ValueYAproximated = round(ValueYAproximated, 1)
+                    if ValueYAproximated == Y_Target:
+                        #print("Y in Position")
+                        Z_Target = float(Z_Target)
+                        Z_Target = round(Z_Target, 1)
+                        ValueZAproximated = RobotArm.StateRobot[3]
+                        ValueZAproximated = round(ValueZAproximated, 1)
+                        if ValueZAproximated == Z_Target:
+                            #print("Z in Position")
+                            print("In Target -- X Axis= " ,RobotArm.StateRobot[1],"mm" ," Y Axis" ,RobotArm.StateRobot[2],"mm" ," Z Axis" ,RobotArm.StateRobot[3],"mm")
+                            RobotState = "In_Position"
+                        else:
+                            print("Error: Z not in position")
+                    else:
+                        print("Error: Y not in position")
+                else:
+                    print("Error: X not in position")
+            else:
+                print(RobotArm.StateRobot[0])
+        else:
+            time.sleep(0.1)
+            print("Second Tentative")
+            while RobotArm.StateRobot[0] == "Run":  # Wait InPosition Robot State
+                self.RobotArmSerial.flushInput()
+                print(RobotArm.StatusRobot(self))
+                print("Robot Move")
+                time.sleep(0.025)
+            if (RobotArm.StateRobot[0] == "Idle"):
+                X_Target = float(X_Target)
+                X_Target = round(X_Target, 1)
+                ValueXAproximated = RobotArm.StateRobot[1]
+                ValueXAproximated = round(ValueXAproximated, 1)
+                if ValueXAproximated == X_Target:
+                    # print("X in Position")
+                    Y_Target = float(Y_Target)
+                    Y_Target = round(Y_Target, 1)
+                    ValueYAproximated = RobotArm.StateRobot[2]
+                    ValueYAproximated = round(ValueYAproximated, 1)
+                    if ValueYAproximated == Y_Target:
+                        # print("Y in Position")
+                        Z_Target = float(Z_Target)
+                        Z_Target = round(Z_Target, 1)
+                        ValueZAproximated = RobotArm.StateRobot[3]
+                        ValueZAproximated = round(ValueZAproximated, 1)
+                        if ValueZAproximated == Z_Target:
+                            # print("Z in Position")
+                            print("In Target -- X Axis= ", X_Target, "mm", " Y Axis", Y_Target, "mm", " Z Axis",Z_Target, "mm")
+                            RobotState = "In_Position"
+                        else:
+                            print("Error: Z not in position")
+                    else:
+                        print("Error: Y not in position")
+                else:
+                    print("Error: X not in position")
+  #  def GoToCArtesianPosition(self, X_Target, Y_Target, Z_Target, Speed):
