@@ -44,7 +44,7 @@ First tests of turning on the camera and setting the basic settings such as geom
 
 #### GUI:
 
-![Alt text](https://github.com/daddi1987/RobotArmVision/blob/51de02973a85ea8d1802595c33841541bf9dff50/Photo/Camera%20Tracking.bmp?raw=true "**RobotArm Tracking**")
+![Alt text](https://github.com/daddi1987/RobotArmVision/blob/51de02973a85ea8d1802595c33841541bf9dff50/Photo/Camera%20Tracking.bmp?raw=true "**RobotArmTracking**")
 
 #### Robot Gripper with camera, light and laser
 
