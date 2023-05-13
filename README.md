@@ -39,6 +39,10 @@ The Principal Command Move Robot are GoToPosition e IncrementalPosition.
 | **StatusRobot:**  |  Know the real-time position of the Robot.|
 | **SoftReset:** | Soft Reset Fw Grbl |
 
+### **Vision Camera:**
+First tests of turning on the camera and setting the basic settings such as geometries and calculation of instantaneous and average frames.
+
+
 
 	
-	https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg
+	
