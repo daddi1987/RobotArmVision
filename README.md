@@ -42,7 +42,20 @@ The Principal Command Move Robot are GoToPosition e IncrementalPosition.
 ### **Vision Camera:**
 First tests of turning on the camera and setting the basic settings such as geometries and calculation of instantaneous and average frames.
 
+#### GUI:
 
+![Alt text](https://github.com/daddi1987/RobotArmVision/blob/51de02973a85ea8d1802595c33841541bf9dff50/Photo/Camera%20Tracking.bmp?raw=true "**RobotArm Tracking**")
 
+#### Robot Gripper with camera, light and laser
+
+![Alt text](https://github.com/daddi1987/RobotArmVision/blob/51de02973a85ea8d1802595c33841541bf9dff50/Photo/IMG_20230513_194156.jpg?raw=true "**RobotArm With Gripper And Light**")
+
+###### Light and Camera
+
+![Alt text](https://github.com/daddi1987/RobotArmVision/blob/51de02973a85ea8d1802595c33841541bf9dff50/Photo/IMG_20230513_194203.jpg?raw=true "**RobotArm With Gripper And Light**")
+
+######  Laser pointer
+
+![Alt text](https://github.com/daddi1987/RobotArmVision/blob/51de02973a85ea8d1802595c33841541bf9dff50/Photo/IMG_20230513_194222.jpg?raw=true "**RobotArm With Gripper And Light**")
 	
 	
